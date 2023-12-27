@@ -60,6 +60,7 @@
           <systemPropertyVariables>
             <application.properties>/application.properties</application.properties>
             <webdriver.chrome.driver>/Users/Vritant/Downloads/chromedriver-mac-x64/chromedriver</webdriver.chrome.driver>
+            <webdriver.gecko.driver>/Users/Vritant/Downloads/geckodriver</webdriver.gecko.driver>
           </systemPropertyVariables>
         </configuration>
       </plugin>
@@ -157,7 +158,7 @@
     <profile>
       <id>grid</id>
       <properties>
-        <grid.url>http://localhost:4444/wd/hub/</grid.url>
+        <grid.url>http://192.168.29.118:4444/wd/hub/</grid.url>
       </properties>
     </profile>
   </profiles>

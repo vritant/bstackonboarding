@@ -95,11 +95,9 @@ public class SampleJUnitTest extends JUnitTestBase {
     */
     pause(10000);
 
-
     //By signMeIn = By.id("user_submit");
     //driver.findElement(signMeIn).click();
     pause(10000);
-
 
     //By enterpriseLogin = By.id("enterprise_user_submit");
     //wait.until((ExpectedConditions.visibilityOfElementLocated(enterpriseLogin)));
