@@ -111,13 +111,20 @@
     </profile>
     <!-- environments -->
     <profile>
-      <id>localhost</id>
+      <id>Bstack</id>
       <properties>
-        <site.url>http://localhost/</site.url>
+        <site.url>https://www.wikipedia.org/</site.url>
+        <bstack.passwd>wrongagain</bstack.passwd>
       </properties>
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
+    </profile>
+    <profile>
+      <id>localhost</id>
+      <properties>
+        <site.url>http://localhost/</site.url>
+      </properties>
     </profile>
     <profile>
       <id>devhost</id>

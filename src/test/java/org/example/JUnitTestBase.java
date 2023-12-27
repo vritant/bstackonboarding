@@ -1,5 +1,6 @@
 package org.example;
 
+import java.awt.*;
 import java.net.URL;
 
 import org.junit.ClassRule;
@@ -18,6 +19,8 @@ public class JUnitTestBase {
 
   protected static URL gridHubUrl;
   protected static String baseUrl;
+  protected static String email, passwd;
+
   protected static Capabilities capabilities;
 
   protected WebDriver driver;
@@ -28,9 +31,15 @@ public class JUnitTestBase {
     protected void before() throws Throwable {
       SuiteConfiguration config = new SuiteConfiguration();
       baseUrl = config.getProperty("site.url");
+
       if (config.hasProperty("grid.url") && !"".equals(config.getProperty("grid.url"))) {
         gridHubUrl = new URL(config.getProperty("grid.url"));
       }
+
+      passwd = config.getProperty("bstack.passwd");
+      email = config.getProperty("bstack.email");
+
+
       capabilities = config.getCapabilities();
     };
   };
