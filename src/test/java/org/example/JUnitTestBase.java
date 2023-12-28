@@ -32,13 +32,16 @@ public class JUnitTestBase {
       SuiteConfiguration config = new SuiteConfiguration();
       baseUrl = config.getProperty("site.url");
 
+      /*
       if (config.hasProperty("grid.url") && !"".equals(config.getProperty("grid.url"))) {
         gridHubUrl = new URL(config.getProperty("grid.url"));
       }
 
+       */
+      gridHubUrl = new URL("https://bstackdemo.com/");
+
       passwd = config.getProperty("bstack.passwd");
       email = config.getProperty("bstack.email");
-
 
       capabilities = config.getCapabilities();
     };

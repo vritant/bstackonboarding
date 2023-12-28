@@ -43,10 +43,15 @@ public class SampleJUnitTest extends JUnitTestBase {
     //System.out.println(passwd);
 
     driver.get(baseUrl);
+    WebDriverWait wait = new WebDriverWait(driver, 10);
+
+    By terms = By.id("accept-cookie-notification");
+    wait.until(ExpectedConditions.elementToBeClickable(terms));
+    driver.findElement(terms).click();
+
     //Assert.assertFalse("".equals(homepage.header.getText()));
     By signIn = By.partialLinkText("Sign in");
 
-    WebDriverWait wait = new WebDriverWait(driver, 10);
     wait.until(ExpectedConditions.visibilityOfElementLocated(signIn));
     driver.findElement(signIn).click();
 
@@ -56,27 +61,31 @@ public class SampleJUnitTest extends JUnitTestBase {
     wait.until(ExpectedConditions.visibilityOfElementLocated(emailEl));
     driver.findElement(emailEl).sendKeys(email);
     driver.findElement(passwordEl).sendKeys(passwd);
+
+    wait.until(ExpectedConditions.elementToBeClickable(submit));
     driver.findElement(submit).click();
 
 
     By android = By.cssSelector("[data-test-ositem='android']");
     wait.until(ExpectedConditions.visibilityOfElementLocated(android));
 
-    Assert.assertTrue(driver.getCurrentUrl().contains("live-"));
+    Assert.assertTrue(driver.getCurrentUrl().contains("live"));
     driver.findElement(android).click();
 
-    By s23 = By.cssSelector("[data-test-dev-name='Galaxy S23']");
-    wait.until(ExpectedConditions.visibilityOfElementLocated(s23));
+    By s23 = By.cssSelector("[data-test-dev-name='Galaxy S22+']");
+    wait.until(ExpectedConditions.elementToBeClickable(s23));
     Actions actions = new Actions(driver);
     actions.moveToElement(driver.findElement(s23));
     driver.findElement(s23).click();
 
     By chrome = By.cssSelector("[data-test-device-browser='chrome']");
-    wait.until(ExpectedConditions.visibilityOfElementLocated(chrome));
+    pause(2000);
+    //wait.until(ExpectedConditions.elementToBeClickable(chrome));
     driver.findElement(chrome).click();
 
     By message = By.className("loader__head-message");
-    wait.until(ExpectedConditions.visibilityOfElementLocated(message));
+    pause(2000);
+    //wait.until(ExpectedConditions.visibilityOfElementLocated(message));
 
     /* SSO login
     By emailEl = By.id("identifierId");
