@@ -24,9 +24,8 @@ public class SampleJUnitTest extends JUnitTestBase {
   }
 
   @Test
-  @Ignore
   public void testHomePageHasAHeader() {
-    driver.get(baseUrl);
+    driver.get("https://wikipedia.org");
     Assert.assertFalse("".equals(homepage.header.getText()));
     driver.findElement(By.id("searchInput")).sendKeys("Red Hat");
     //pause(4000);

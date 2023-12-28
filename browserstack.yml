@@ -33,7 +33,7 @@ resolution: 1024x768
 platforms:
   - os: OS X
     osVersion: Big Sur
-    browserName: Chrome
+    browserName: Safari
     browserVersion: latest
   - os: Windows
     osVersion: 10
@@ -41,7 +41,15 @@ platforms:
     browserVersion: latest
   - os: Windows
     osVersion: 11
-    browserName: Edge
+    browserName: Firefox
+    browserVersion: latest
+  - os: Windows
+    osVersion: 11
+    browserName: Chrome
+    browserVersion: latest
+  - os: Windows
+    osVersion: 10
+    browserName: IE
     browserVersion: latest
 
 # =======================
@@ -53,7 +61,7 @@ platforms:
 # Example 1 - If you have configured 3 platforms and set `parallelsPerPlatform` as 2, a total of 6 (2 * 3) parallel threads will be used on BrowserStack
 #
 # Example 2 - If you have configured 1 platform and set `parallelsPerPlatform` as 5, a total of 5 (1 * 5) parallel threads will be used on BrowserStack
-parallelsPerPlatform: 1
+parallelsPerPlatform: 2
 
 source: junit5:sdk-archetype-integrate:v1.0
 
